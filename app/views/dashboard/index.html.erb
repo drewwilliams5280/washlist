@@ -1,1 +1,17 @@
 <h1><%= @list.name %></h1>
+<% if @list.trucks.empty? %>
+  <p>You haven't added any trucks yet.</p>
+<% else %>
+  <table id="trucks">
+    <tr>
+      <th>Unit Number</th>
+      <th>Unit Type</th> 
+    </tr>
+    <% @list.trucks.each do |truck| %>
+      <tr>
+        <td><%= truck.unit_number %></td>
+        <td><%= truck.unit_type %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>

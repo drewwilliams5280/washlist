@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+ #trucks {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 30%;
+}
+
+#trucks td, #trucks th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#trucks tr:hover {background-color: #ddd;}
+
+#trucks th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #1A8CE5;
+  color: white;
+}
