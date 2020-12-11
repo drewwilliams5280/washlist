@@ -41,7 +41,6 @@ RSpec.describe "As a user" do
     fill_in :name, with: "Best List"
     fill_in :password, with: "123"
     click_on "Sign In"
-    save_and_open_page
     expect(current_path).to eq("/")
     expect(page).to have_content("Your credentials are incorrect")
     expect(page).to have_content("Welcome to WashList!")
