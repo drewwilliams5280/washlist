@@ -1,5 +1,7 @@
 class Truck < ApplicationRecord
   validates :unit_number, presence: true
+  belongs_to :list
+  has_many :notes
   enum unit_type: [ "Panel Van", 
                     "High Roof Panel Van",
                     "12' Box Truck",

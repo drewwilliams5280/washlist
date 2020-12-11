@@ -7,6 +7,10 @@ RSpec.describe List, type: :model do
     it {should validate_presence_of :password}
   end
 
+  describe "relationships" do
+    it {should have_many :trucks}
+  end
+
   describe "creation" do
     it "can create a list" do
       list = List.create!(name: "Super best list", password: "123", password_confirmation: '123')
