@@ -12,4 +12,26 @@ RSpec.describe "As a user" do
     click_link("Create a new WashList")
     expect(current_path).to eq("/list/new")
   end
+  
+  it "can fill in form and be logged in" do
+    List.create!(name: "My List", password: "123", password_confirmation: "123")
+    visit root_path
+    fill_in :name, with: "My List"
+    fill_in :password, with: "123"
+    click_on "Sign In"
+    expect(current_path).to eq("/dashboard")
+    expect(page).to have_content("You have successfully signed in")
+    expect(page).to have_content("My List")
+  end
+
+  it "can fill in form with incorrect credentials and get correct flash message and redirect" do
+    List.create!(name: "My List", password: "123", password_confirmation: "123")
+    visit root_path
+    fill_in :name, with: "My List"
+    fill_in :password, with: "1234"
+    click_on "Sign In"
+    expect(current_path).to eq("/")
+    expect(page).to have_content("Your credentials are incorrect")
+    expect(page).to have_content("Welcome to WashList!")
+  end
 end

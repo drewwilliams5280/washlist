@@ -1,2 +1,9 @@
 <h1>Welcome to WashList!</h1>
-<p><%= link_to "Create a new WashList", "/list/new" %> or sign into an existing WashList below.</p>
+<p><%= link_to "Create a new WashList", "/list/new" %> or sign in to an existing WashList below.</p><br>
+<%= form_with method: :post, url: '/session' do |f| %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name, required: true %><br>
+  <%= f.label :password %><br>
+  <%= f.text_field :password, required: true %><br>
+  <%= f.submit "Sign In" %>
+<% end %>
