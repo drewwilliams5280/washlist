@@ -1,0 +1,8 @@
+<%= form_with method: :patch, url: "/trucks/#{@truck.id}", local: true do |f| %>
+  <%= f.label :unit_number %><br>
+  <%= f.text_field :unit_number, value: @truck.unit_number, required: true %><br>
+  <%= f.select :unit_type, @unit_types, :selected => @truck.unit_type %><br><br>
+  <%= f.label :status %><br>
+  <%= f.select :status, @statuses, :selected => @truck.status %><br><br>
+  <%= f.submit "Submit" %>
+<% end %>

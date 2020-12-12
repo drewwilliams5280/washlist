@@ -5,6 +5,9 @@ class TrucksController < ApplicationController
   end
 
   def edit
+    @truck = Truck.find(params[:id])
+    @unit_types = Truck.unit_types.keys
+    @statuses = Truck.statuses.keys
   end
 
   def new
@@ -15,6 +18,14 @@ class TrucksController < ApplicationController
     truck = current_list.trucks.create!(unit_number: params[:unit_number], 
                                         unit_type: Truck.unit_types[params[:unit_type]])
     truck.notes.create!(text: params[:note]) if params[:note] != ""   
+    redirect_to '/dashboard'
+  end
+
+  def update
+    truck = Truck.find(params[:id])
+    truck.update(unit_number: params[:unit_number], 
+                unit_type: Truck.unit_types[params[:unit_type]],
+                status: Truck.statuses[params[:status]])
     redirect_to '/dashboard'
   end
 
