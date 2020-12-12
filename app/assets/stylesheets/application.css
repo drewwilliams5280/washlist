@@ -19,9 +19,9 @@
   width: 50%;
 }
 
-.trucks td, #trucks th {
-  border: 1px solid #ddd;
+.trucks td {
   padding: 8px;
+  text-align: center;
 }
 
 .trucks tr:hover {background-color: #ddd;}
@@ -32,6 +32,14 @@
   text-align: left;
   background-color: #1A8CE5;
   color: white;
+  text-align: center;
+}
+
+.ellipsis {
+  max-width: 40px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 td{
