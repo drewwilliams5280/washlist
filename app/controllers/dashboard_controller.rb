@@ -1,10 +1,7 @@
 class DashboardController < ApplicationController
+  before_action :current_list?
   def index
-    if current_list
-      @list = current_list
-      @trucks = @list.trucks.order(:sort).all
-    else
-      render file: "/public/401"
-    end
+    @list = current_list
+    @trucks = @list.trucks.order(:sort).all
   end
 end
