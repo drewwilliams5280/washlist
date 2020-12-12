@@ -5,13 +5,15 @@
   <table class="trucks">
     <tr>
       <th>Unit Number</th>
-      <th>Unit Type</th> 
+      <th>Unit Type</th>
     </tr>
-    <% @list.trucks.each do |truck| %>
-      <tr>
-        <td><%= truck.unit_number %></td>
-        <td><%= truck.unit_type %></td>
-      </tr>
-    <% end %>
+    <tbody class="sortable"> 
+      <% @trucks.each do |truck| %>
+        <tr id="<%= truck.sortable_id %>"> 
+          <td><%= truck.unit_number %></td>
+          <td><%= truck.unit_type %></td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
 <% end %>

@@ -1,4 +1,7 @@
 class Truck < ApplicationRecord
+  include RailsSortable::Model
+  set_sortable :sort
+  
   validates :unit_number, presence: true
   belongs_to :list
   has_many :notes

@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe "Dashboard" do
-  it "gives 401 if not signed int" do
+  it "gives 401 if not signed in" do
     visit '/dashboard'
     expect(page).to have_content('You are not authorized to view this page.')
   end
@@ -32,7 +32,6 @@ RSpec.describe "Dashboard" do
     truck3 = list.trucks.create!(unit_number: "345000", unit_type: 7)
     allow_any_instance_of(ApplicationController).to receive(:current_list).and_return(list)
     visit '/dashboard'
-    save_and_open_page
     expect(page).to have_content("Unit Number")
     expect(page).to have_content("Unit Type")
     expect(page).to have_content(truck1.unit_number)
