@@ -11,11 +11,3 @@ RSpec.describe "As a user" do
     expect(List.first.name).to eq("Amazing list")
   end
 end
-
-# <%= form_with method: :post, url: '/list' do |f| %>
-#   <%= f.label :name %><br>
-#   <%= f.text_field :name, required: true %><br>
-#   <%= f.select :unit_type, @unit_types %><br><br>
-#   <%= f.submit "Create WashList" %>
-# <% end %>
-# Putting here so I don't forget
