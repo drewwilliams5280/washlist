@@ -14,3 +14,11 @@
 //= require activestorage
 //= require_tree .
 //= require turbolinks
+//= require jquery
+//= require jquery_ujs
+//= require jquery-ui/widgets/sortable
+//= require rails_sortable
+
+$(function() {
+  $('.sortable').railsSortable();
+})(jQuery);
