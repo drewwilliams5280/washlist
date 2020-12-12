@@ -4,5 +4,7 @@
   <%= f.select :unit_type, @unit_types, :selected => @truck.unit_type %><br><br>
   <%= f.label :status %><br>
   <%= f.select :status, @statuses, :selected => @truck.status %><br><br>
+  <%= f.label :note %><br>
+  <%= f.text_field :note, required: false %><br>
   <%= f.submit "Submit" %>
 <% end %>

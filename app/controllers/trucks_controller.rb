@@ -17,7 +17,7 @@ class TrucksController < ApplicationController
   def create
     truck = current_list.trucks.create!(unit_number: params[:unit_number], 
                                         unit_type: Truck.unit_types[params[:unit_type]])
-    truck.notes.create!(text: params[:note]) if params[:note] != ""   
+    truck.notes.create!(text: params[:note]) unless params[:note].empty?   
     redirect_to '/dashboard'
   end
 
@@ -26,6 +26,7 @@ class TrucksController < ApplicationController
     truck.update(unit_number: params[:unit_number], 
                 unit_type: Truck.unit_types[params[:unit_type]],
                 status: Truck.statuses[params[:status]])
+    truck.notes.create!(text: params[:note]) unless params[:note].empty?
     redirect_to '/dashboard'
   end
 
