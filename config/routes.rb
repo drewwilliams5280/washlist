@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   resources :list, only: [:new, :create]
   resources :dashboard, only: [:index]
   resources :session, only: [:create]
-  resources :trucks, only: [:new, :create]
+  resources :trucks
 end

@@ -18,8 +18,7 @@ RSpec.describe Truck, type: :model do
       expect(truck).to be_a(Truck)
       expect(truck.unit_number).to eq("497656")
       expect(truck.unit_type).to eq("Sleeper")
-      expect(truck.not_started?).to eq(true)
-      expect(truck.in_progress?).to eq(false)
+      expect(truck.status).to eq("Not Started")
     end
   end
 
