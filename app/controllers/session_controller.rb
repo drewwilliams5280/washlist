@@ -10,4 +10,10 @@ class SessionController < ApplicationController
       redirect_to "/"
     end
   end
+
+  def destroy
+    session.delete(:list_id)
+    flash[:notice] = "You have been logged out"
+    redirect_to "/"
+  end
 end

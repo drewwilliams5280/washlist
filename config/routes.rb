@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :dashboard, only: [:index]
   resources :session, only: [:create]
   resources :trucks
+  get '/logout', to: 'session#destroy'
 end

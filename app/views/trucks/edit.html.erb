@@ -8,3 +8,9 @@
   <%= f.text_field :note, required: false %><br>
   <%= f.submit "Submit" %>
 <% end %>
+
+<% @truck.notes.each do |note| %>
+  <p><%= note.created_at.strftime("%m/%d/%Y at %H:%M%p")%>: <%= note.text %></p>
+<% end %>
+<br>
+<%= link_to "Delete Truck", "/trucks/#{@truck.id}", method: :delete %>
