@@ -10,6 +10,11 @@
   </head>
 
   <body>
+      <nav class = "topnav">
+        <%= link_to "Home", "/" %>
+        <%= link_to "Dashboard", "/dashboard"%>
+        <%= link_to "Log Out", "/logout"%>
+      </nav>
     <% flash.each do |name, msg| %>
       <div class= "<%=name%>-flash">
         <p><%= msg %></p>

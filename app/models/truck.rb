@@ -5,7 +5,7 @@ class Truck < ApplicationRecord
   validates :unit_number, presence: true
   belongs_to :list
   has_many :notes, :dependent => :destroy
-  enum status: [:not_started, :in_progress, :finished]
+  enum status: ["Not Started", "In Progress", "Finished"]
   enum unit_type: [ "Panel Van", 
                     "High Roof Panel Van",
                     "12' Box Truck",

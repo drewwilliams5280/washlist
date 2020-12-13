@@ -6,13 +6,15 @@
     <tr>
       <th>Unit Number</th>
       <th>Unit Type</th>
+      <th>Status</th>
       <th>Latest Note</th>
     </tr>
     <tbody class="sortable"> 
       <% @trucks.each do |truck| %>
         <tr id="<%= truck.sortable_id %>"> 
-          <td><%= link_to truck.unit_number, "/trucks/#{truck.id}" %></td>
+          <td><%= link_to truck.unit_number, "/trucks/#{truck.id}/edit" %></td>
           <td><%= truck.unit_type %></td>
+          <td><%= truck.status %></td>
           <td><%= truck.notes.last.text unless truck.notes.empty? %></td>
         </tr>
       <% end %>

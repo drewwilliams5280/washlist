@@ -1,0 +1,6 @@
+<h3>Unit <%= @truck.unit_number %></h3>
+<p><%= @truck.unit_type %></p>
+<p>Status: <%= @truck.status %></p>
+<br><br>
+<%= link_to 'Edit', "/trucks/#{@truck.id}/edit" %>
+<%= link_to "Delete", "/trucks/#{@truck.id}", method: :delete %>
