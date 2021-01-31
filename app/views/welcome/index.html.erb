@@ -1,4 +1,15 @@
-<h1>Welcome to WashList!</h1>
+<div class="banner">
+  <div class="app-text">
+    <h1>Welcome to WashList!</h1>
+    <p>WashList is an app that lets you create lists <br> to be more efficient with the cleaning process.<br>
+    Simply create a list and add trucks. Trucks can be <br> given unit numbers, notes, status updates, and more!</p>
+  </div>
+  <div class="app-picture">
+    <img src="<%= asset_path( 'Logo-01.png' ) %>">
+  </div>
+</div>
+
+<% if false %>
 <p><%= link_to "Create a new WashList", "/list/new" %> or sign in to an existing WashList below.</p><br>
 <%= form_with method: :post, url: '/session', local: true do |f| %>
   <%= f.label :name, "WashList Name" %><br>
@@ -6,4 +17,5 @@
   <%= f.label :password %><br>
   <%= f.password_field :password, required: true %><br>
   <%= f.submit "Sign In" %>
+<% end %>
 <% end %>

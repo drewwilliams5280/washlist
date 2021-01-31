@@ -10,11 +10,15 @@
   </head>
 
   <body>
-      <nav class = "topnav">
-        <%= link_to "Home", "/" %>
-        <%= link_to "Dashboard", "/dashboard"%>
-        <%= link_to "Log Out", "/logout"%>
-      </nav>
+      <div class="topnav">
+        <ul>
+          <li class="logo"><img src="<%= asset_path( 'Logo-01-no-text.png' ) %>"></li>
+          <li>Home</li>
+          <li>Dashboard</li>
+          <li>About</li>
+          <li><a href="#" class="signup-btn"><span>Sign Up</span></a></li>
+        </ul>
+      </div>
     <% flash.each do |name, msg| %>
       <div class= "<%=name%>-flash">
         <p><%= msg %></p>
