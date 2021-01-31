@@ -87,7 +87,7 @@ td{
   color: #333333;
   border: 2px solid transparent;
   border-radius: 20px;
-  background-image: linear-gradient(#fff,#fff), radial-gradient(circle at top left, #333333,#19d7f8);
+  background-image: linear-gradient(#fff,#fff), radial-gradient(circle at top left, #333333,#1B9DD9);
   background-origin: border-box;
   background-clip: content-box,border-box;
 }
@@ -119,6 +119,24 @@ td{
   margin: 30px 0 30px 40px;
   line-height: 25px;
   color: #666565
+}
+.login-form{
+  width: 650px;
+  font-size: 15px;
+  margin: 30px 0 30px 40px;
+  line-height: 25px;
+  color: #666565
+}
+.login-btn{
+  background-color: #fff;
+  border: 2px solid #1B9DD9;
+  color: #1B9DD9;
+  padding: 1px 55px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  cursor: pointer;
 }
 .app-picture{
   width: 50%;

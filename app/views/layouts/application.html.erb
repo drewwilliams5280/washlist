@@ -14,9 +14,16 @@
         <ul>
           <li class="logo"><img src="<%= asset_path( 'Logo-01-no-text.png' ) %>"></li>
           <li>Home</li>
-          <li>Dashboard</li>
+          <% if current_list %>
+            <li>Dashboard</li>
+          <% end %>
           <li>About</li>
-          <li><a href="#" class="signup-btn"><span>Sign Up</span></a></li>
+          <% if !current_list %>
+            <li><a href="#" class="signup-btn"><span>Sign Up</span></a></li>
+          <% end %>
+          <% if current_list %>
+            <li><a href="#" class="signup-btn"><span>Log Out</span></a></li>
+          <% end %>
         </ul>
       </div>
     <% flash.each do |name, msg| %>
