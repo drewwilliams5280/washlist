@@ -19,14 +19,3 @@
     <img src="<%= asset_path( 'Logo-01.png' ) %>">
   </div>
 </div>
-
-<% if false %>
-<p><%= link_to "Create a new WashList", "/list/new" %> or sign in to an existing WashList below.</p><br>
-<%= form_with method: :post, url: '/session', local: true do |f| %>
-  <%= f.label :name, "WashList Name" %><br>
-  <%= f.text_field :name, required: true %><br>
-  <%= f.label :password %><br>
-  <%= f.password_field :password, required: true %><br>
-  <%= f.submit "Sign In" %>
-<% end %>
-<% end %>
