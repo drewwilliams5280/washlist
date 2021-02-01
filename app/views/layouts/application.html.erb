@@ -27,8 +27,12 @@
         </ul>
       </div>
     <% flash.each do |name, msg| %>
-      <div class= "<%=name%>-flash">
-        <p><%= msg %></p>
+      <div class="flash">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <%= msg %>
+        <script>
+          setTimeout("$('.flash').fadeOut('slow')", 2500)
+        </script>
       </div>
     <% end %>
     <%= yield %>

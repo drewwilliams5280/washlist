@@ -1,16 +1,22 @@
-<%= form_with method: :patch, url: "/trucks/#{@truck.id}", local: true do |f| %>
-  <%= f.label :unit_number %><br>
-  <%= f.text_field :unit_number, value: @truck.unit_number, required: true %><br>
-  <%= f.select :unit_type, @unit_types, :selected => @truck.unit_type %><br><br>
-  <%= f.label :status %><br>
-  <%= f.select :status, @statuses, :selected => @truck.status %><br><br>
-  <%= f.label :note %><br>
-  <%= f.text_field :note, required: false %><br>
-  <%= f.submit "Submit" %>
-<% end %>
-
-<% @truck.notes.each do |note| %>
-  <p><%= note.created_at.strftime("%m/%d/%Y at %H:%M%p")%>: <%= note.text %></p>
-<% end %>
-<br>
-<%= link_to "Delete Truck", "/trucks/#{@truck.id}", method: :delete %>
+ <div class="row">
+  <div class="column" style="text-align:center;">
+    <%= form_with method: :patch, url: "/trucks/#{@truck.id}", local: true do |f| %>
+      <%= f.text_field :unit_number, value: @truck.unit_number, required: true, placeholder: "Unit Number" %><br>
+      <%= f.select :unit_type, @unit_types, :selected => @truck.unit_type %><br>
+      <%= f.select :status, @statuses, :selected => @truck.status %><br>
+      <%= f.text_field :note, required: false, placeholder: "Add Note (optional)" %><br>
+      <%= button_tag(type: 'submit', class: "btn") do %>
+              Submit
+      <% end %>
+    <% end %>
+    <br><br>
+    <%= link_to "Delete Truck", "/trucks/#{@truck.id}", method: :delete %>
+  </div>
+  <div class="column" style="text-align:left;">
+    <h1>Notes</h1>
+    <% @truck.notes.each do |note| %>
+      <p><%= note.created_at.strftime("%m/%d/%Y at %H:%M%p")%>: <%= note.text %></p>
+    <% end %>
+    <br>
+  </div>
+</div>

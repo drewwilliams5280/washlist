@@ -13,24 +13,24 @@
  *= require_tree .
  *= require_self
  */
- /* .trucks {
+ .trucks-table {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
 
-.trucks td {
+.trucks-table td {
   padding: 8px;
   text-align: center;
 }
 
-.trucks tr:hover {background-color: #ddd;}
+.trucks-table tr:hover {background-color: #ddd;}
 
-.trucks th {
+.trucks-table th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #1A8CE5;
+  background-color: #1B9DD9;
   color: white;
   text-align: center;
 }
@@ -44,26 +44,30 @@
 
 td{
   cursor: move;
-} */
-
-/* .topnav {
-  overflow: hidden;
-  background-color: #1A8CE5;
+}
+.flash {
+  padding: 10px;
+  background-color: #1B9DD9;
+  color: white;
+  margin-bottom: 15px;
 }
 
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+/* The close button */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.topnav a:hover {
-  background-color: #17BEBB;
+/* When moving the mouse over the close button */
+.closebtn:hover {
   color: black;
-} */
+}
 .topnav ul{
   display: inline-flex;
   margin: 50px;
@@ -127,11 +131,11 @@ td{
   line-height: 25px;
   color: #666565
 }
-.login-btn{
+.btn{
   background-color: #fff;
   border: 2px solid #1B9DD9;
   color: #1B9DD9;
-  padding: 1px 55px;
+  padding: 1px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -146,4 +150,61 @@ td{
   width: 100%;
   margin-top: 30px;
   padding-left: 50px;
+}
+a:link {
+  color: #1B9DD9;
+}
+
+/* visited link */
+a:visited {
+  color: #1B9DD9;
+}
+
+/* mouse over link */
+a:hover {
+  color: #177dac;
+}
+
+/* selected link */
+a:active {
+  color: #1B9DD9;
+}
+.list-page{
+  width: 80%;
+  height: 70%;
+  top: 25%;
+  left: 130px;
+  position: absolute;
+  color: #333333;
+}
+input[type=text], select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  box-sizing: border-box;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
 }
