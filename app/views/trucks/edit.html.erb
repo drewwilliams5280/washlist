@@ -1,5 +1,5 @@
  <div class="row">
-  <div class="column" style="text-align:center;">
+  <div class="column">
     <%= form_with method: :patch, url: "/trucks/#{@truck.id}", local: true do |f| %>
       <%= f.text_field :unit_number, value: @truck.unit_number, required: true, placeholder: "Unit Number" %><br>
       <%= f.select :unit_type, @unit_types, :selected => @truck.unit_type %><br>
