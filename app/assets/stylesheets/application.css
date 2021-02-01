@@ -216,3 +216,25 @@ input[type=password], select {
     width: 100%;
   }
 }
+.github-logo{
+  width: 20%;
+  float: right;
+}
+.github-logo img{
+  width: 100%;
+  margin-top: 150px;
+  margin-left: -40px;
+  padding-left: 50px;
+  cursor: pointer;
+}
+.linkedin-logo{
+  width: 16%;
+  float: right;
+}
+.linkedin-logo img{
+  width: 100%;
+  margin-top: 148px;
+  margin-left: -70px;
+  padding-left: 50px;
+  cursor: pointer;
+}
