@@ -46,10 +46,16 @@ td{
   cursor: move;
 }
 .flash {
+  position: fixed;
+  top: 97px;
+  left: 0;
+  right: 0;
+  z-index: 7000;
   padding: 10px;
   background-color: #1B9DD9;
   color: white;
-  margin-bottom: 15px;
+  z-index: 7000;
+  text-align: center;
 }
 
 /* The close button */
@@ -198,6 +204,7 @@ input[type=password], select {
 
 /* Create two equal columns that floats next to each other */
 .column {
+  margin-top:20px;
   float: left;
   width: 50%;
   padding: 10px;
