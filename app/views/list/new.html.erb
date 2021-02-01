@@ -1,9 +1,8 @@
 <%= form_with method: :post, url: '/list', local: true do |f| %>
-  <%= f.label :name, "WashList Name" %><br>
-  <%= f.text_field :name, required: true %><br>
-  <%= f.label :password %><br>
-  <%= f.text_field :password, required: true %><br>
-  <%= f.label :password_confirmation %><br>
-  <%= f.text_field :password_confirmation, required: true %><br>
-  <%= f.submit "Create WashList" %>
+  <%= f.text_field :name, required: true, placeholder: "WashList Name" %><br>
+  <%= f.password_field :password, required: true, placeholder: "Password" %><br>
+  <%= f.password_field :password_confirmation, required: true, placeholder: "Confirm Password" %><br>
+  <%= button_tag(type: 'submit', class: "btn") do %>
+          Create WashList
+  <% end %>
 <% end %>

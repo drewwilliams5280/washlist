@@ -13,24 +13,24 @@
  *= require_tree .
  *= require_self
  */
- .trucks {
+ .trucks-table {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
 
-.trucks td {
+.trucks-table td {
   padding: 8px;
   text-align: center;
 }
 
-.trucks tr:hover {background-color: #ddd;}
+.trucks-table tr:hover {background-color: #ddd;}
 
-.trucks th {
+.trucks-table th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #1A8CE5;
+  background-color: #1B9DD9;
   color: white;
   text-align: center;
 }
@@ -45,22 +45,196 @@
 td{
   cursor: move;
 }
-
-.topnav {
-  overflow: hidden;
-  background-color: #1A8CE5;
+.flash {
+  padding: 10px;
+  background-color: #1B9DD9;
+  color: white;
+  margin-bottom: 15px;
 }
 
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+/* The close button */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.topnav a:hover {
-  background-color: #17BEBB;
+/* When moving the mouse over the close button */
+.closebtn:hover {
   color: black;
+}
+.topnav ul{
+  display: inline-flex;
+  margin: 50px;
+}
+.topnav ul li{
+  list-style: none;
+  margin: 0 20px;
+  color: #1B9DD9;
+  cursor: pointer;
+}
+.logo img{
+  width: 50px;
+  margin-top: -7px;
+  margin-right: 48px;
+}
+.signup-btn{
+  top: 40px;
+  right: 80px;
+  position: absolute;
+  text-decoration: none;
+  color: #333333;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  background-image: linear-gradient(#fff,#fff), radial-gradient(circle at top left, #333333,#1B9DD9);
+  background-origin: border-box;
+  background-clip: content-box,border-box;
+}
+.signup-btn span{
+  display: block;
+  padding: 8px 22px;
+}
+.banner{
+  width: 80%;
+  height: 70%;
+  top: 25%;
+  left: 130px;
+  position: absolute;
+  color: #333333;
+}
+.app-text{
+  width: 50%;
+  float: left;
+}
+.app-text h1{
+  font-size: 43px;
+  width: 640px;
+  position: relative;
+  margin-left: 40px;
+}
+.app-text p{
+  width: 650px;
+  font-size: 15px;
+  margin: 30px 0 30px 40px;
+  line-height: 25px;
+  color: #666565
+}
+.login-form{
+  width: 650px;
+  font-size: 15px;
+  margin: 30px 0 30px 40px;
+  line-height: 25px;
+  color: #666565
+}
+.btn{
+  background-color: #fff;
+  border: 2px solid #1B9DD9;
+  color: #1B9DD9;
+  padding: 1px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  cursor: pointer;
+}
+.app-picture{
+  width: 50%;
+  float: right;
+}
+.app-picture img{
+  width: 100%;
+  margin-top: 30px;
+  padding-left: 50px;
+}
+a:link {
+  color: #1B9DD9;
+}
+
+/* visited link */
+a:visited {
+  color: #1B9DD9;
+}
+
+/* mouse over link */
+a:hover {
+  color: #177dac;
+}
+
+/* selected link */
+a:active {
+  color: #1B9DD9;
+}
+.list-page{
+  width: 80%;
+  height: 70%;
+  top: 25%;
+  left: 130px;
+  position: absolute;
+  color: #333333;
+}
+input[type=text], select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  box-sizing: border-box;
+}
+input[type=password], select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  box-sizing: border-box;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  text-align:center;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+.github-logo{
+  width: 20%;
+  float: right;
+}
+.github-logo img{
+  width: 100%;
+  margin-top: 150px;
+  margin-left: -40px;
+  padding-left: 50px;
+  cursor: pointer;
+}
+.linkedin-logo{
+  width: 16%;
+  float: right;
+}
+.linkedin-logo img{
+  width: 100%;
+  margin-top: 148px;
+  margin-left: -70px;
+  padding-left: 50px;
+  cursor: pointer;
 }

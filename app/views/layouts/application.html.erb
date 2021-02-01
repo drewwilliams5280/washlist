@@ -10,14 +10,29 @@
   </head>
 
   <body>
-      <nav class = "topnav">
-        <%= link_to "Home", "/" %>
-        <%= link_to "Dashboard", "/dashboard"%>
-        <%= link_to "Log Out", "/logout"%>
-      </nav>
+      <div class="topnav">
+        <ul>
+          <li class="logo"><img src="<%= asset_path( 'Logo-01-no-text.png' ) %>"></li>
+          <li onclick="location.href = '/';">Home</li>
+          <% if current_list %>
+            <li onclick="location.href = '/dashboard';">Dashboard</li>
+          <% end %>
+          <li onclick="location.href = '/about';">About</li>
+          <% if !current_list %>
+            <li><a href="/list/new" class="signup-btn"><span>Sign Up</span></a></li>
+          <% end %>
+          <% if current_list %>
+            <li><a href="/logout" class="signup-btn"><span>Log Out</span></a></li>
+          <% end %>
+        </ul>
+      </div>
     <% flash.each do |name, msg| %>
-      <div class= "<%=name%>-flash">
-        <p><%= msg %></p>
+      <div class="flash">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <%= msg %>
+        <script>
+          setTimeout("$('.flash').fadeOut('slow')", 2500)
+        </script>
       </div>
     <% end %>
     <%= yield %>

@@ -1,8 +1,9 @@
+<div class="list-page">
 <h1><%= @list.name %></h1>
 <% if @list.trucks.empty? %>
   <p>You haven't added any trucks yet.</p>
 <% else %>
-  <table class="trucks">
+  <table class="trucks-table">
     <tr>
       <th>Unit Number</th>
       <th>Unit Type</th>
@@ -21,6 +22,7 @@
     </tbody>
   </table>
 <% end %>
-<br><br>
-<%= link_to "Add Truck", "/trucks/new" %>
+<br><br><br>
+<%= link_to "Add Truck", "/trucks/new", style: 'text-align:center;' %>
 <p>*Drag and drop trucks to reorder list (Desktop version only as of 12/12/2020)*</p>
+</div>

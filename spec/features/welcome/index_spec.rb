@@ -8,8 +8,8 @@ RSpec.describe "As a user" do
   
   it "can navigate to create a wash list" do
     visit root_path
-    expect(page).to have_link("Create a new WashList")
-    click_link("Create a new WashList")
+    expect(page).to have_link("Sign up")
+    click_link("Sign up")
     expect(current_path).to eq("/list/new")
   end
   
@@ -18,9 +18,9 @@ RSpec.describe "As a user" do
     visit root_path
     fill_in :name, with: "My List"
     fill_in :password, with: "123"
-    click_on "Sign In"
+    click_on "Log In"
     expect(current_path).to eq("/dashboard")
-    expect(page).to have_content("You have successfully signed in")
+    expect(page).to have_content("Successfully logged in")
     expect(page).to have_content("My List")
   end
 
@@ -29,7 +29,7 @@ RSpec.describe "As a user" do
     visit root_path
     fill_in :name, with: "My List"
     fill_in :password, with: "1234"
-    click_on "Sign In"
+    click_on "Log In"
     expect(current_path).to eq("/")
     expect(page).to have_content("Your credentials are incorrect")
     expect(page).to have_content("Welcome to WashList!")
@@ -40,7 +40,7 @@ RSpec.describe "As a user" do
     visit root_path
     fill_in :name, with: "Best List"
     fill_in :password, with: "123"
-    click_on "Sign In"
+    click_on "Log In"
     expect(current_path).to eq("/")
     expect(page).to have_content("Your credentials are incorrect")
     expect(page).to have_content("Welcome to WashList!")
