@@ -1,27 +1,32 @@
-<div class="banner">
-  <div class="app-text">
-    <h1>Welcome to WashList!</h1>
-    <p>WashList is an app that lets you create lists <br> to be more efficient with the cleaning process.<br>
-    Simply create a list and add trucks. Trucks can be <br> given unit numbers, notes, status updates, and more!
+<div class="row">
+  <div class="column">
+    <div class="welcome">
+      <h1>Welcome to WashList!</h1>
+      <p>WashList is an app that lets you create lists <br> to be more efficient with the cleaning process.<br>
+      Simply create a list and add trucks. Trucks can be <br> given unit numbers, notes, status updates, and more!
     <br><br>
     <%= link_to "Sign up", "/list/new", class: "a" %> or log in to an existing WashList below.</p>
-    <div class="login-form">
-      <%= form_with method: :post, url: '/session', local: true do |f| %>
-        <%= f.text_field :name, required: true, placeholder: "WashList Name" %><br>
-        <%= f.password_field :password, required: true, placeholder: "Password" %><br>
-        <%= button_tag(type: 'submit', class: "btn") do %>
-          Log In
+    <% if current_list %>
+      <p style="font-weight:bold;">You're already logged in.</p>
+    <% end %>
+    </div>
+      <div class="login-form">
+        <%= form_with method: :post, url: '/session', local: true do |f| %>
+          <%= f.text_field :name, required: true, placeholder: "WashList Name" %><br>
+          <%= f.password_field :password, required: true, placeholder: "Password" %><br>
+          <%= button_tag(type: 'submit', class: "btn") do %>
+           Log In
+          <% end %>
         <% end %>
-      <% end %>
     </div>
   </div>
-  <div class="app-picture">
-    <img src="<%= asset_path( 'Logo-01.png' ) %>">
-  </div>
+  <div class="column">
+    <img src="<%= asset_path( 'Logo-01.png' ) %>" style="margin-top:30px;display:block;width:100%;height:auto;">
   <div class="github-logo">
-    <img onclick="location.href = 'https://www.github.com/drewwilliams5280/washlist';"src="<%= asset_path( 'github-logo.png' ) %>">
+    <img onclick="window.open('https://www.github.com/drewwilliams5280/washlist')"src="<%= asset_path( 'github-logo.png' ) %>">
   </div>
   <div class="linkedin-logo">
-    <img onclick="location.href = 'https://www.linkedin.com/in/drewwilliams5280/';" src="<%= asset_path( 'linkedin-logo.png' ) %>">
+    <img onclick="window.open('https://www.linkedin.com/in/drewwilliams5280/')" src="<%= asset_path( 'linkedin-logo.png' ) %>">
+  </div>
   </div>
 </div>
