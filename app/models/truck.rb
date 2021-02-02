@@ -15,4 +15,23 @@ class Truck < ApplicationRecord
                     "Day Cab",
                     "Sleeper"
                   ]
+  def self.to_csv
+    attributes = %w{unit_number unit_type status latest_note}
+
+    CSV.generate(headers: true) do |csv|
+      csv << attributes
+
+      all.find_each do |truck|
+        csv << attributes.map{ |attr| truck.send(attr) }
+      end
+    end
+  end
+
+  def latest_note
+    if notes.last != nil
+      notes.last.text
+    else
+      ""
+    end
+  end
 end

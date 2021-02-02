@@ -15,8 +15,9 @@ class TrucksController < ApplicationController
   end
 
   def create
-    truck = current_list.trucks.create!(unit_number: params[:unit_number], 
-                                        unit_type: Truck.unit_types[params[:unit_type]])
+    truck = current_list.trucks.create!(
+      unit_number: params[:unit_number], 
+      unit_type: Truck.unit_types[params[:unit_type]])
     truck.notes.create!(text: params[:note]) unless params[:note].empty?   
     redirect_to '/dashboard'
   end
