@@ -26,6 +26,7 @@
   </table>
 <% end %>
 <br><br><br>
-<%= link_to "Add Truck", "/trucks/new", style: 'text-align:center;' %>
+<%= link_to "Add Truck", "/trucks/new", style: 'text-align:center;margin-right:10px;', class: "btn" %>
+<%= link_to( 'Export CSV' ,{ :controller => :dashboard, :action => :index, format: 'csv'}, { :class => "btn" } ) %>
 <p style="font-family:sans-serif;">*Drag and drop trucks to reorder list*</p>
 </div>
