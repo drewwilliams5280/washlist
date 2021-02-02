@@ -17,7 +17,14 @@
           <% if current_list %>
             <li onclick="location.href = '/dashboard';">Dashboard</li>
           <% end %>
-          <li onclick="location.href = '/about';">About</li>
+          <li id="myBtn">About</li>
+            <div id="myModal" class="modal">
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>WashList was created by Drew Williams, a graduate of Turing School of Software and Design's backend engineering program and former 
+                Branch Rental Manager at Penske.</p>
+              </div>
+            </div>
           <% if !current_list %>
             <li><a href="/list/new" class="signup-btn"><span>Sign Up</span></a></li>
           <% end %>
@@ -36,5 +43,21 @@
       </div>
     <% end %>
     <%= yield %>
+    <script>
+      var modal = document.getElementById("myModal");
+      var btn = document.getElementById("myBtn");
+      var span = document.getElementsByClassName("close")[0];
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    </script>
   </body>
 </html>
