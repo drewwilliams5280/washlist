@@ -27,6 +27,8 @@
 <% end %>
 <br><br><br>
 <%= link_to "Add Truck", "/trucks/new", style: 'text-align:center;margin-right:10px;', class: "btn" %>
-<%= link_to( 'Export CSV' ,{ :controller => :dashboard, :action => :index, format: 'csv'}, { :class => "btn", :style => "float:right;border:2px solid #24820e;color:#24820e;" } ) %>
+<% if @trucks.size > 0 %>
+  <%= link_to( 'Export CSV' ,{ :controller => :dashboard, :action => :index, format: 'csv'}, { :class => "btn", :style => "float:right;border:2px solid #24820e;color:#24820e;" } ) %>
+<% end %>
 <p style="font-family:sans-serif;">*Drag and drop trucks to reorder list*</p>
 </div>
