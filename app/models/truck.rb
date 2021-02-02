@@ -20,8 +20,8 @@ class Truck < ApplicationRecord
 
     CSV.generate(headers: true) do |csv|
       csv << attributes
-
-      all.find_each do |truck|
+      
+      all.each do |truck|
         csv << attributes.map{ |attr| truck.send(attr) }
       end
     end
