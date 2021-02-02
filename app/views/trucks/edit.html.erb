@@ -9,8 +9,8 @@
               Submit
       <% end %>
     <% end %>
-    <br><br>
-    <%= link_to "Delete Truck", "/trucks/#{@truck.id}", method: :delete %>
+    <br><br><br>
+    <%= link_to "Delete Truck", "/trucks/#{@truck.id}", method: :delete, class: "btn", style: "border:2px solid #c90c0c;color:#c90c0c;" %>
   </div>
   <div class="column" style="text-align:left;">
     <h1>Notes</h1>
