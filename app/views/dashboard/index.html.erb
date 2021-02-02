@@ -1,34 +1,36 @@
 <div class="list-page">
-<h1 style="font-family:sans-serif;">WashList: <%= @list.name %></h1>
-<% if @list.trucks.empty? %>
-  <p style="font-family:sans-serif;">You haven't added any trucks yet.</p>
-<% else %>
-  <table class="trucks-table">
-    <tr>
-      <th>Unit Number</th>
-      <th>Unit Type</th>
-      <th>Status</th>
-      <th>Latest Note</th>
-    </tr>
-    <tbody class="sortable"> 
-      <% @trucks.each do |truck| %>
-        <tr id="<%= truck.sortable_id %>"> 
-          <td><%= link_to truck.unit_number, "/trucks/#{truck.id}/edit" %>
-          <img src="<%= asset_path( 'edit-icon.png' ) %>" 
+  <h1 style="font-family:sans-serif;">WashList: <%= @list.name %></h1>
+  <% if @list.trucks.empty? %>
+    <p style="font-family:sans-serif;">You haven't added any trucks yet.</p>
+  <% else %>
+    <table class="trucks-table">
+      <tr>
+        <th>Unit Number</th>
+        <th>Unit Type</th>
+        <th>Status</th>
+        <th>Latest Note</th>
+      </tr>
+      <tbody class="sortable">
+        <% @trucks.each do |truck| %>
+          <tr id="<%= truck.sortable_id %>">
+            <td><%= link_to truck.unit_number, "/trucks/#{truck.id}/edit" %>
+              <img src="<%= asset_path( 'edit-icon.png' ) %>" 
           style="cursor:pointer;margin-left:5px;max-width:100%;height:16px;"
           onclick="location.href = '/trucks/<%= truck.id %>/edit'"></td>
-          <td><%= truck.unit_type %></td>
-          <td><%= truck.status %></td>
-          <td><%= truck.notes.last.text unless truck.notes.empty? %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% end %>
-<br><br><br>
-<%= link_to "Add Truck", "/trucks/new", style: 'text-align:center;margin-right:10px;', class: "btn" %>
-<% if @trucks.size > 0 %>
-  <%= link_to( 'Export CSV' ,{ :controller => :dashboard, :action => :index, format: 'csv'}, { :class => "btn", :style => "float:right;border:2px solid #24820e;color:#24820e;" } ) %>
-<% end %>
-<p style="font-family:sans-serif;">*Drag and drop trucks to reorder list*</p>
+            <td><%= truck.unit_type %></td>
+            <td><%= truck.status %></td>
+            <td><%= truck.notes.last.text unless truck.notes.empty? %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+  <br>
+  <br>
+  <br>
+  <%= link_to "Add Truck", "/trucks/new", style: 'text-align:center;margin-right:10px;', class: "btn" %>
+  <% if @trucks.size > 0 %>
+    <%= link_to( 'Export CSV' ,{ :controller => :dashboard, :action => :index, format: 'csv'}, { :class => "btn", :style => "float:right;border:2px solid #24820e;color:#24820e;" } ) %>
+  <% end %>
+  <p style="font-family:sans-serif;">*Drag and drop trucks to reorder list*</p>
 </div>

@@ -4,35 +4,33 @@
     <title>WashList</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-
   <body>
-      <div class="topnav">
-        <ul>
-          <li class="logo"><img src="<%= asset_path( 'Logo-01-no-text.png' ) %>"></li>
-          <li onclick="location.href = '/';">Home</li>
-          <% if current_list %>
-            <li onclick="location.href = '/dashboard';">Dashboard</li>
-          <% end %>
-          <li id="myBtn">About</li>
-            <div id="myModal" class="modal">
-              <div class="modal-content">
-                <span class="close">&times;</span>
-                <p>WashList was created by Drew Williams, a graduate of Turing School of Software and Design's backend engineering program and former 
-                Branch Rental Manager at Penske.</p>
-              </div>
-            </div>
-          <% if !current_list %>
-            <li><a href="/list/new" class="signup-btn"><span>Sign Up</span></a></li>
-          <% end %>
-          <% if current_list %>
-            <li><a href="/logout" class="signup-btn"><span>Log Out</span></a></li>
-          <% end %>
-        </ul>
-      </div>
+    <div class="topnav">
+      <ul>
+        <li class="logo"><img src="<%= asset_path( 'Logo-01-no-text.png' ) %>"></li>
+        <li onclick="location.href = '/';">Home</li>
+        <% if current_list %>
+          <li onclick="location.href = '/dashboard';">Dashboard</li>
+        <% end %>
+        <li id="myBtn">About</li>
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>WashList was created by Drew Williams, a graduate of Turing School of Software and Design's backend engineering program and former 
+              Branch Rental Manager at Penske.</p>
+          </div>
+        </div>
+        <% if !current_list %>
+          <li><a href="/list/new" class="signup-btn"><span>Sign Up</span></a></li>
+        <% end %>
+        <% if current_list %>
+          <li><a href="/logout" class="signup-btn"><span>Log Out</span></a></li>
+        <% end %>
+      </ul>
+    </div>
     <% flash.each do |name, msg| %>
       <div class="flash">
         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>

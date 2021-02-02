@@ -1,11 +1,11 @@
-<div class="row">    
-  <div class="column">    
+<div class="row">
+  <div class="column">
     <%= form_with method: :post, url: '/trucks', local: true do |f| %>
       <%= f.text_field :unit_number, required: true, placeholder: "Unit Number" %><br>
       <%= f.select :unit_type, @unit_types %><br>
       <%= f.text_field :note, required: false, placeholder: "Add Note (optional)" %><br>
       <%= button_tag(type: 'submit', class: "btn") do %>
-              Add Truck to WashList
+        Add Truck to WashList
       <% end %>
     <% end %>
   </div>

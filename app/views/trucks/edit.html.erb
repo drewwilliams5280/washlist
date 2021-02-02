@@ -1,4 +1,4 @@
- <div class="row">
+<div class="row">
   <div class="column">
     <%= form_with method: :patch, url: "/trucks/#{@truck.id}", local: true do |f| %>
       <%= f.text_field :unit_number, value: @truck.unit_number, required: true, placeholder: "Unit Number" %><br>
@@ -6,10 +6,12 @@
       <%= f.select :status, @statuses, :selected => @truck.status %><br>
       <%= f.text_field :note, required: false, placeholder: "Add Note (optional)" %><br>
       <%= button_tag(type: 'submit', class: "btn") do %>
-              Submit
+        Submit
       <% end %>
     <% end %>
-    <br><br><br>
+    <br>
+    <br>
+    <br>
     <%= link_to "Delete Truck", "/trucks/#{@truck.id}", method: :delete, class: "btn", style: "border:2px solid #c90c0c;color:#c90c0c;" %>
   </div>
   <div class="column" style="text-align:left;">
