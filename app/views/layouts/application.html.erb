@@ -23,11 +23,10 @@
               Branch Rental Manager at Penske.</p>
           </div>
         </div>
-        <% if !current_list %>
-          <li><a href="/list/new" class="signup-btn"><span>Sign Up</span></a></li>
-        <% end %>
         <% if current_list %>
           <li><a href="/logout" class="signup-btn"><span>Log Out</span></a></li>
+        <% else %>
+          <li><a href="/list/new" class="signup-btn"><span>Sign Up</span></a></li>
         <% end %>
       </ul>
     </div>
