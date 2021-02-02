@@ -167,10 +167,6 @@ a:visited {
   color: #1B9DD9;
 }
 
-/* mouse over link */
-a:hover {
-  color: #177dac;
-}
 
 /* selected link */
 a:active {
